@@ -15,3 +15,13 @@ contract Child is Parent {
         return _value;
     }
 }
+
+/*
+private: accessible only within the same contract.
+
+internal: accessible within the same contract and derived contracts.
+
+public: accessible from anywhere.
+
+external: like public but callable only from outside the contract (not from internal functions).
+ */
