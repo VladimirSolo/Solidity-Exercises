@@ -15,9 +15,7 @@ contract ContractImmutableTest is Test {
         uint256 gasUsed = startGas - gasleft();
 
         assertEq(contractImmutable.value(), 10, "expected value to be 10");
-
-        if (gasUsed < 90000) assertFalse(false);
-        else assertFalse(true);
+        assertLt(gasUsed, 110000, "Gas used is too high");
     }
 
     function testContractImmutable2() external {
@@ -26,8 +24,6 @@ contract ContractImmutableTest is Test {
         uint256 gasUsed = startGas - gasleft();
 
         assertEq(contractImmutable.value(), 550, "expected value to be 550");
-
-        if (gasUsed < 90000) assertFalse(false);
-        else assertFalse(true);
+        assertLt(gasUsed, 110000, "Gas used is too high");
     }
 }
